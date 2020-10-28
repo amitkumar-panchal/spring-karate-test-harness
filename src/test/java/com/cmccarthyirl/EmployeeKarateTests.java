@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class KarateTests {
+class EmployeeKarateTests {
 
     @Test
     void testParallel() {
