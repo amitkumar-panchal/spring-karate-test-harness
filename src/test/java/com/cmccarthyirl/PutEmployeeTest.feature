@@ -1,10 +1,9 @@
-Feature: Hello World
+Feature: Update Employees
 
   Background:
     Given url baseUrl
 
-  Scenario: Get all Employees
+  Scenario: Update Employees
     Given path '/employees'
     When method GET
     Then status 200
-    And print response

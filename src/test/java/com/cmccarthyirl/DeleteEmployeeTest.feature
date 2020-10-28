@@ -1,10 +1,9 @@
-Feature: Hello World
+Feature: Delete Employee
 
   Background:
     Given url baseUrl
 
-  Scenario: Get all Employees
-    Given path '/employees'
+  Scenario: Delete Employee
+    Given path '/delete/1'
     When method GET
     Then status 200
-    And print response
