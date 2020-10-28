@@ -74,7 +74,7 @@
                 <version>2.22.1</version>
                 <configuration>
                     <excludes>
-                        <exclude>karate/**/*.java</exclude>
+                        <exclude>com/cmccarthyirl/*.java</exclude>
                     </excludes>
                 </configuration>
             </plugin>
