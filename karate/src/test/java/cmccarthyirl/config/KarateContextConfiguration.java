@@ -6,9 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan({
-        "com.cmccarthy"
+        "com.cmccarthyirl"
 })
 @PropertySource("classpath:/application.properties")
-public class KarateContextConfiguration {
-
-}
+public class KarateContextConfiguration {}
