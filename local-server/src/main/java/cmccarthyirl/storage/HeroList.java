@@ -30,23 +30,6 @@ public class HeroList {
         return anotherHero;
     }
 
-//    public static Hero getHero(String name) {
-//        Hero anotherHero = null;
-//        for (Hero listOfHero : listOfHeros) {
-//            if (listOfHero.getName().equals(name)) {
-//                anotherHero = listOfHero;
-//            }
-//        }
-//        return anotherHero;
-//    }
-
-//    public static void updateHero(int id, String name, int age, String weapon, String specialPower) {
-//        if (getHero(id) != null) {
-//            listOfHeros.remove(getHero(id));
-//            listOfHeros.add(new Hero(id, name, age, weapon, specialPower));
-//        }
-//    }
-
     public static void updateHero(Hero newHero, int id) {
         if (getHero(id) != null) {
             listOfHeros.remove(getHero(id));

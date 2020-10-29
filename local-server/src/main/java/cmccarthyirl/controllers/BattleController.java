@@ -1,6 +1,5 @@
 package cmccarthyirl.controllers;
 
-
 import cmccarthyirl.models.BattleReport;
 import cmccarthyirl.models.BattleResultsLog;
 import cmccarthyirl.storage.HeroList;
@@ -18,18 +17,16 @@ import java.util.Random;
 @RestController
 public class BattleController {
 
-    BattleReport battleReport;
 
-    @PostMapping("/battle")
-    public ResponseEntity<?> calculateFight(@RequestParam(value = "yourHeroId") int candidateHero, @RequestParam(value = "chosenHeroId") int hardCodedHero) {
-        int candidatesHeroAge = HeroList.getHero(candidateHero).getAge();
-        int randomNum = new Random().nextInt((1000 - 1) + 1) + 1;
+    @PostMapping(value = "/battle", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<?> calculateFight(@RequestParam(value = "yourHeroId") int candidateHeroId, @RequestParam(value = "chosenHeroId") int selectedHeroId) {
+        int battleId = new Random().nextInt((1000 - 1) + 1) + 1;
 
-        battleReport = new BattleReport();
-        battleReport.setResultId(randomNum);
+        final BattleReport battleReport = new BattleReport();
+        battleReport.setResultId(battleId);
         battleReport.setMessage("Please use the above Report ID to retrieve your Battle report");
 
-        BattleResultsLog battleResultsLog = checkResults(candidatesHeroAge, HeroList.getHero(hardCodedHero).getAge(), HeroList.getHero(hardCodedHero).getName(), randomNum, candidateHero);
+        final BattleResultsLog battleResultsLog = checkResults(candidateHeroId, battleId, selectedHeroId);
         List<BattleResultsLog> battleResultsLogList = new ArrayList<>();
         battleResultsLogList.add(battleResultsLog);
 
@@ -42,15 +39,16 @@ public class BattleController {
         return new ResponseEntity<>(battleReport, HttpStatus.OK);
     }
 
-    private BattleResultsLog checkResults(int candidatesHeroAge, int hardCodedHeroAge, String hardCodedHeroName, int randomNum, int candidateHero) {
-        BattleResultsLog battleResultsLog;
+    private BattleResultsLog checkResults(int candidateHeroId, int battleId, int selectedHeroId) {
+        final BattleResultsLog battleResultsLog;
+        final int candidatesHeroAge = HeroList.getHero(candidateHeroId).getAge();
 
-        if (candidatesHeroAge == hardCodedHeroAge) {
-            battleResultsLog = new BattleResultsLog("DRAW", randomNum, "Both Heros fought for days to test their might, in the end Dead Pool got tired of waiting for a winner and killed them both");
-        } else if (candidatesHeroAge > hardCodedHeroAge) {
-            battleResultsLog = new BattleResultsLog("WIN", randomNum, HeroList.getHero(candidateHero).getName() + " fought like a true champion and destroyed " + hardCodedHeroName);
+        if (candidatesHeroAge == HeroList.getHero(selectedHeroId).getAge()) {
+            battleResultsLog = new BattleResultsLog("DRAW", battleId, "Both Hero's fought for days to test their might, in the end Dead Pool got tired of waiting for a winner and killed them both");
+        } else if (candidatesHeroAge > HeroList.getHero(selectedHeroId).getAge()) {
+            battleResultsLog = new BattleResultsLog("WIN", battleId, HeroList.getHero(candidateHeroId).getName() + " fought like a true champion and destroyed " + selectedHeroId);
         } else {
-            battleResultsLog = new BattleResultsLog("LOSS", randomNum, HeroList.getHero(candidateHero).getName() + " fought well but in the end " + hardCodedHeroName + " kicked his ass!");
+            battleResultsLog = new BattleResultsLog("LOSS", battleId, HeroList.getHero(candidateHeroId).getName() + " fought well but in the end " + selectedHeroId + " kicked his ass!");
         }
         return battleResultsLog;
     }

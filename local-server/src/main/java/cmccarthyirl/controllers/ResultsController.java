@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ResultsController {
 
-	@GetMapping("/results")
+	@GetMapping(value = "/results", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<?> results() {
 		return new ResponseEntity<>(ResultsContainer.getResult(), HttpStatus.OK);
 	}
 
-	@GetMapping("/results/{id}")
+	@GetMapping(value = "/results/{id}", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<?> results(@PathVariable int id) {
 		return new ResponseEntity<>(ResultsContainer.getResult(id), HttpStatus.OK);
 	}
