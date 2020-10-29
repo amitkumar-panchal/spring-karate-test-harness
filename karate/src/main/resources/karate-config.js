@@ -1,7 +1,7 @@
 function fn() {
 
     var config = {
-        baseUrl : System
+        baseUrl : 'http://localhost:8080'
     };
 
     return config;
