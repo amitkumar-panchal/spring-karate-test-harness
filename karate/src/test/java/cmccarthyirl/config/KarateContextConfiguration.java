@@ -1,4 +1,4 @@
-package com.cmccarthyirl.config;
+package cmccarthyirl.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

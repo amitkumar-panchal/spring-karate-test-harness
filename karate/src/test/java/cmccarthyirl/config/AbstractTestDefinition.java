@@ -1,4 +1,5 @@
-package com.cmccarthyirl.config;
+package cmccarthyirl.config;
+
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
