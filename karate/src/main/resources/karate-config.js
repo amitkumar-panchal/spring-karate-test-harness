@@ -1,7 +1,7 @@
 function fn() {
 
     var config = {
-        baseUrl : 'http://dummy.restapiexample.com/api/v1'
+        baseUrl : System
     };
 
     return config;

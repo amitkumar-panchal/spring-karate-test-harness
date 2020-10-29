@@ -1,6 +1,4 @@
-*.md
 target/
-.gradle/
 .idea
 *.iws
 *.iml
