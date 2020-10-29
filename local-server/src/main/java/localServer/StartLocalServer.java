@@ -1,4 +1,4 @@
-package com.cmccarthyirl.localServer;
+package localServer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

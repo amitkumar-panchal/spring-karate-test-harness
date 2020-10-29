@@ -1,6 +1,6 @@
-package com.cmccarthyirl.localServer.services;
+package localServer.services;
 
-import com.cmccarthyirl.localServer.entities.Person;
+import localServer.entities.Person;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

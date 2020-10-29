@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class EmployeeKarateTests extends AbstractTestDefinition {
+class EmployeeKarateTest extends AbstractTestDefinition {
 
     @Test
     void testParallel() {
-        Results results = Runner.path("classpath:com/cmccarthyirl").tags("~@ignore").parallel(5);
+        Results results = Runner.path().tags("~@ignore").parallel(5);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
     }
 }
