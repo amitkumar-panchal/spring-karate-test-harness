@@ -1,7 +1,7 @@
-package localServer.controllers;
+package cmccarthyirl.controllers;
 
-import localServer.services.PersonService;
-import localServer.entities.Person;
+import cmccarthyirl.services.PersonService;
+import cmccarthyirl.entities.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

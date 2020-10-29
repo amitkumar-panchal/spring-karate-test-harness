@@ -1,4 +1,4 @@
-package localServer.entities;
+package cmccarthyirl.entities;
 
 import java.util.Objects;
 
