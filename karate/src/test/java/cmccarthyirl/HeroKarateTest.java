@@ -4,7 +4,7 @@ import cmccarthyirl.config.AbstractTestDefinition;
 import com.intuit.karate.junit5.Karate;
 
 
-class EmployeeKarateTest extends AbstractTestDefinition {
+class HeroKarateTest extends AbstractTestDefinition {
 
     @Karate.Test
     Karate testAll() {

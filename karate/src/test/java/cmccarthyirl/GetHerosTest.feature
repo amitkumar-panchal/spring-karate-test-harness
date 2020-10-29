@@ -4,12 +4,13 @@ Feature: Get all Employees
     Given url baseUrl
 
   Scenario: Get all Employees
-    Given path '/employees'
+    Given path '/hero'
     When method GET
     Then status 200
+    And print response
 
   Scenario: Get single Employee
-    Given path '/employee/1'
+    Given path '/hero/1'
     When method GET
     Then status 200
-    And match response[*].employee_name contains ['Tiger Nixon']
+    And match response.name == 'Achilles'
