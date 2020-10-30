@@ -5,7 +5,7 @@ Feature: Battle Tests
     And header Accept = 'application/json'
     And header Content-Type = 'application/json; charset=utf-8'
 
-  Scenario: Create Employees
+  Scenario: Battle Endpoint Scenario
     Given path '/battle'
     And param yourHeroId = 1
     And param chosenHeroId = 2

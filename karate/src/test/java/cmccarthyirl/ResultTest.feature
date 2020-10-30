@@ -5,7 +5,7 @@ Feature: Get Results Tests
     And header Accept = 'application/json'
     And header Content-Type = 'application/json; charset=utf-8'
 
-  Scenario: Get all results
+  Scenario: Get all results Endpoint Scenario
     Given path '/results'
     When method GET
     Then status 200

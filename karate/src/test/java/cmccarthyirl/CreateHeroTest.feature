@@ -5,7 +5,7 @@ Feature: Create Hero Tests
     And header Accept = 'application/json'
     And header Content-Type = 'application/json; charset=utf-8'
 
-  Scenario: Update Employees
+  Scenario: Create Hero Endpoint Scenario
     Given path '/battle'
     And request {"id": 7,"name": "SDET","age": 100,"weapon": "Programming","specialPower": "Can see the Matrix"}
     When method PUT
